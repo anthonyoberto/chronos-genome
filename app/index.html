@@ -32,16 +32,50 @@
 
       <nav>
         <ul>
-          <li><a href="#">Pinboard</a></li>
-          <li><a href="#">Calendar</a></li>
-          <li><a href="#">Friends</a></li>
-          <li><a href="#">Messages</a></li>
+          <li class="current">Pinboard</li>
+          <li>Calendar</li>
+          <li>Friends</li>
+          <li id="messages">Messages <span>8</span></li>
         </ul>
       </nav>
 
       <div class="profile-and-add">
         <img src="http://placehold.it/25x25" alt="user profile image">
         <img src="http://placehold.it/25x25" alt="plus sign icon">
+      </div>
+      
+      <div class="hidden" id="messages-dropdown">
+        <div id="messages-dropdown-wrapper">
+          <div class="messages-header">
+            <div class="messages-header-wrapper">
+              <p class="active" id="attending">Inbox &#40;8&#41;</p>
+              <span>&#47;</span>
+              <p id="not-attending">Sent</p>
+
+              <img src="images/compose-icon.svg" alt="compose icon">
+            </div>
+          </div>
+
+          <div class="users-wrapper">
+            <div class="user">
+              <img src="http://placehold.it/50x50" alt="profile image for person one">
+              <p class="username">Jacob Hubertus</p>
+              <p class="usermessage">Are you coming to the Roadtrip?</p>
+            </div>
+
+            <div class="user">
+              <img src="http://placehold.it/50x50" alt="profile image for person two">
+              <p class="username">Jasmine Larsson</p>
+              <p class="usermessage"> Extra long messages and their profile images are still vertically aligned in the middle of their container.</p>
+            </div>
+
+            <div class="user">
+              <img src="http://placehold.it/50x50" alt="profile image for person three">
+              <p class="username">Trent Walton</p>
+              <p class="usermessage">That&#8217;s a nice pair of genes.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -64,24 +98,22 @@
           <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
           <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
         </div>
-        
-        <!-- <span class="attend-separator">&#124;</span> -->
 
         <div class="attendance">
           <p id="attending">Yes</p>
           <span>&#47;</span>
-          <p id="notAttending">No</p>
+          <p id="not-attending">No</p>
         </div>
       </div>
 
       <div class="featured-categories">
         <h2>Featured</h2>
         <ul>
-          <li><a href="#">Blog Post</a></li>
-          <li><a href="#">Event</a></li>
-          <li><a href="#">Photo</a></li>
-          <li><a href="#">Music</a></li>
-          <li><a href="#">Video</a></li>
+          <li class="featured-category" href="#">Blog Post</li>
+          <li class="featured-category active" href="#">Event</li>
+          <li class="featured-category" href="#">Photo</li>
+          <li class="featured-category" href="#">Music</li>
+          <li class="featured-category" href="#">Video</li>
         </ul>
       </div>
 
@@ -93,112 +125,180 @@
         <div class="sort-by-wrapper">
           <p>Sort By</p>
           <div class="sort-by-options">
-            <div class="sort-by-icon green-pin"></div>
-            <div class="sort-by-icon blue-pin"></div>
-            <div class="sort-by-icon orange-pin"></div>
-            <div class="sort-by-icon red-pin"></div>
+            <button class="sort-by-icon green-pin filter" data-filter=".category-4"></button>
+            <button class="sort-by-icon blue-pin filter" data-filter=".category-3"></button>
+            <button class="sort-by-icon orange-pin filter" id="orange" data-filter=".category-2"></button>
+            <button class="sort-by-icon red-pin filter" data-filter=".category-1"></button>
           </div>
         </div>
     </section>
 
-    <section id="pinboard">
 
-        <article class="pin photo">
-          <div class="pin-wrapper">
-            <div class="like-wrapper">
-              <img src="images/heart-icon-fill.svg" alt="like heart icon">
-              <p id="like-count">like count here</p>
+    <section class="pinboard container" id="Container">
+      <article class="pin photo mix category-2" data-my-order="1">
+        <div class="pin-wrapper">
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon orange-pin"></div>
+        </div>
+      </article>
+
+      <article class="pin text mix category-3" data-my-order="1">
+        <div class="pin-wrapper">            
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon blue-pin"></div>
+
+          <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+        </div>
+      </article>
+
+      <article class="pin event mix category-1" data-my-order="1">
+        <div class="pin-wrapper">
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon red-pin"></div>
+
+          <h2>Company retreat in Deer Valley, Utah</h2>
+          <p>time</p>
+
+          <div class="attendance-meta">
+            <div class="attendees">
+              <img src="http://placehold.it/25x25" alt="attendee 1" class="user1">
+              <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
+              <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
             </div>
 
-
-            <div class="sort-by-icon orange-pin">
+            <div class="attendance">
+              <p id="attending">Yes</p>
+              <span>&#47;</span>
+              <p id="not-attending">No</p>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="pin text">
-          <div class="pin-wrapper">            
-            <div class="like-wrapper">
-              <img src="images/heart-icon-fill.svg" alt="like heart icon">
-              <p id="like-count">like count here</p>
-            </div>
-
-            <div class="sort-by-icon blue-pin">
-            </div>
-
-            <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+      <article class="pin song mix category-4" data-my-order="1">
+        <div class="pin-wrapper">           
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
           </div>
-        </article>
 
-        <article class="pin event">
-          <div class="pin-wrapper">
-            <div class="like-wrapper">
-              <img src="images/heart-icon-fill.svg" alt="like heart icon">
-              <p id="like-count">like count here</p>
-            </div>
+          <div class="sort-by-icon green-pin"></div>
 
-            <h2>Company retreat in Deer Valley, Utah</h2>
-            <p>time</p>
+          <h2>Daft Punk &#8208; Get lucky</h2>
 
-            <div class="attendance-meta">
-              <div class="attendees">
-                <img src="http://placehold.it/25x25" alt="attendee 1" class="user1">
-                <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
-                <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
-              </div>
-
-              <div class="attendance">
-                <p id="attending">Yes</p>
-                <span>&#47;</span>
-                <p id="notAttending">No</p>
-              </div>
+          <audio id="music" preload="true">
+            <source src="audio/pi.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <div id="audioplayer">
+            <button id="pButton" class="play" onclick="play()"></button>
+            <div id="timeline">    
+              <div id="playhead"></div>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="pin song">
-          <div class="pin-wrapper">           
-            <div class="like-wrapper">
-              <img src="images/heart-icon-fill.svg" alt="like heart icon">
-              <p id="like-count">like count here</p>
-            </div>
+      <article class="pin song mix category-4" data-my-order="2">
+        <div class="pin-wrapper">           
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
 
-            <h2>Daft Punk &#8208; Get lucky</h2>
+          <div class="sort-by-icon green-pin"></div>
 
-            <audio id="music" preload="true">
-              <source src="audio/pi.mp3" type="audio/mp3">
-              Your browser does not support the audio element.
-            </audio>
-            <div id="audioplayer">
-              <button id="pButton" class="play" onclick="play()"></button>
-              <div id="timeline">    
-                <div id="playhead"></div>
-              </div>
+          <h2>Jai Paul &#8208; Jasmine</h2>
+
+          <audio id="music" preload="true">
+            <source src="audio/pi.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+          <div id="audioplayer">
+            <button id="pButton" class="play" onclick="play()"></button>
+            <div id="timeline">    
+              <div id="playhead"></div>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <article class="pin song">
-          <div class="pin-wrapper">           
-            <div class="like-wrapper">
-              <img src="images/heart-icon-fill.svg" alt="like heart icon">
-              <p id="like-count">like count here</p>
+      <article class="pin text mix category-3" data-my-order="2">
+        <div class="pin-wrapper">            
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon blue-pin"></div>
+
+          <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+        </div>
+      </article>
+
+      <article class="pin photo mix category-2" data-my-order="2">
+        <div class="pin-wrapper">
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon orange-pin"></div>
+        </div>
+      </article>
+
+      <article class="pin text mix category-3" data-my-order="3">
+        <div class="pin-wrapper">            
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon blue-pin"></div>
+
+          <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+        </div>
+      </article>
+
+      <article class="pin event mix category-1" data-my-order="2">
+        <div class="pin-wrapper">
+          <div class="like-wrapper">
+            <img src="images/heart-icon-fill.svg" alt="like heart icon">
+            <p id="like-count">like count here</p>
+          </div>
+
+          <div class="sort-by-icon red-pin"></div>
+
+          <h2>Company retreat in Deer Valley, Utah</h2>
+          <p>time</p>
+
+          <div class="attendance-meta">
+            <div class="attendees">
+              <img src="http://placehold.it/25x25" alt="attendee 1" class="user1">
+              <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
+              <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
             </div>
 
-            <h2>Daft Punk &#8208; Get lucky</h2>
-
-            <audio id="music" preload="true">
-              <source src="audio/pi.mp3" type="audio/mp3">
-              Your browser does not support the audio element.
-            </audio>
-            <div id="audioplayer">
-              <button id="pButton" class="play" onclick="play()"></button>
-              <div id="timeline">    
-                <div id="playhead"></div>
-              </div>
+            <div class="attendance">
+              <p id="attending">Yes</p>
+              <span>&#47;</span>
+              <p id="not-attending">No</p>
             </div>
           </div>
-        </article>
+        </div>
+      </article>
 
     </section>
 
@@ -209,31 +309,31 @@
 
         <hr class="connecting-line">
         
-        <p class="number" id="pos1">1</p>
+        <p class="number" id="pos-1">1</p>
         
         <hr class="connecting-line">
         
-        <div class="date-dot" id="pos2"><p>&#9675;</p></div>
+        <div class="date-dot" id="pos-2"><p>&#9675;</p></div>
         
         <hr class="connecting-line">
         
-        <p class="number" id="pos3">3</p>
+        <p class="number" id="pos-3">3</p>
         
         <hr class="connecting-line">
         
-        <p class="date" id="centerPos">4 January</p>
+        <p class="date" id="centerPos-">4 January</p>
 
         <hr class="connecting-line">
         
-        <p class="number" id="pos5">5</p>
+        <p class="number" id="pos-5">5</p>
 
         <hr class="connecting-line">
         
-        <div class="date-dot" id="pos6"><p>&#9675;</p></div>
+        <div class="date-dot" id="pos-6"><p>&#9675;</p></div>
 
         <hr class="connecting-line">
         
-        <p class="number" id="pos7">7</p>
+        <p class="number" id="pos-7">7</p>
         
         <hr class="connecting-line">
         
@@ -244,6 +344,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/mixitup/src/jquery.mixitup.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -1,0 +1,62 @@
+.date-wrapper {
+  background-color: rgba(0,0,0,.85);
+  bottom: 0;
+  color: $light-gray;
+  position: fixed;
+  padding: 9px 0px 21px 0px;
+  text-align: center;
+  width: 100%;
+  min-width: 1000px;
+  z-index: 1;
+}
+
+.date-wrapper > * {
+  display: inline-block;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.arrow {
+  position: relative;
+  top: 14px;
+  width: 40px;
+}
+
+.arrow:last-of-type {
+  -webkit-transform: rotate(180deg); /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+      -ms-transform: rotate(180deg); /* IE 9 */
+          transform: rotate(180deg); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+.arrow, .number, .date-dot, .date {
+  cursor: pointer;
+}
+
+.number {
+  background: transparent;
+  border: 2px solid;
+  font-size: 13px;
+  height: 19px;
+  text-align: center;
+  width: 19px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+
+.connecting-line {
+  width: 7.6%;
+  margin-bottom: 4px;
+  border: 1px solid $light-gray;
+}
+
+.date {
+  background: transparent;
+  border: 2px solid;
+  height: 23px;
+  padding: 10px;
+
+  -webkit-border-radius: 36%;
+     -moz-border-radius: 36%;
+          border-radius: 36%;
+}

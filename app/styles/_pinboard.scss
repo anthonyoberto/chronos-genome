@@ -1,3 +1,7 @@
+#Container .mix{
+    display: none;
+}
+
 #pinboard-header {
   background-color: #fff;
   height: 115px;
@@ -14,7 +18,7 @@
   }
 
   p {
-    color: $gray;
+    color: $light-gray;
     display: inline-block;
     font-size: 13px;
     margin-right: 20px;
@@ -35,9 +39,9 @@
   cursor: pointer;
   display: inline-block;
   float: right;
-  height: 14px;
+  height: 16px;
   margin: 5px 0 0 7px;
-  width: 14px;
+  width: 16px;
 }
 
 .sort-by-icon:last-of-type {
@@ -45,7 +49,7 @@
 }
 
 .red-pin {
-  border-color: #d66247;
+  border-color: #dc4343;
 }
 
 .orange-pin {
@@ -60,17 +64,20 @@
   border-color: #21bfb3;
 }
 
-#pinboard {
+.pinboard {
   background-color: #edeff0;
   padding-top: 35px;
-  padding-bottom: 100px;
+  padding-bottom: 110px;
+  padding-right: 0;
   @include cf;
 }
 
 .pin {
   height: 270px;
-  @include gallery(4 of 12);
-  margin-bottom: gutter(12);
+  position: relative;
+  width: 30.3%;
+  margin-right: 2.7%;
+  margin-bottom: 2.7%;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -87,9 +94,10 @@
 }
 
 .pin-wrapper {
+  width: 87%;
   height: 210px;
   padding: 30px 25px;
-  position: relative;
+  position: absolute;
 
   h2 {
     font-size: 21px;
