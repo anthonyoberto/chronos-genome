@@ -4,19 +4,17 @@ Based on Chronos Pinboard design by Victor Erixon: https://dribbble.com/shots/14
 ## Getting Started
 
 ### Setup
-How to setup the app for development.
-
 
 Check if you have Node.js and NPM installed
 ```
 $node --version && npm --version
 ```
 
-To install Node.js
+1. To install Node.js
 ```
 install Node.js (https://nodejs.org/)
 ```
-To install NPM
+2. To install NPM
 ```
 $ npm install --global npm@latest
 ```
@@ -26,18 +24,20 @@ Check if you have Git installed
 $git --version
 ```
 
-Download Git here (http://git-scm.com/)
+3. Download Git here (http://git-scm.com/)
 
 Check if you have Yo, Bower.io, and Grunt
 ```
 $yo --version && bower --version && grunt --version
 ```
 
-To install Yo, Bower, and Grunt
+4. To install Yo, Bower, and Grunt
 
 ```
 $npm install --global yo bower grunt-cli
 ```
+
+### Launch App
 
 To launch app, change into chronos-genome directory and run:
 ```

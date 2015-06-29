@@ -1,0 +1,36 @@
+#audioplayer{
+  position: absolute;
+  bottom: 35px;
+  width: 87%;
+}
+
+#pButton{
+    height: 30px; 
+    width: 30px;
+    border: none;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+}
+
+.play{background: url('http://www.alexkatz.me/codepen/images/play.png') ;}
+.pause{background: url('') ;}
+
+#timeline{
+  width: 81%;
+  height: 4px;
+  margin-top: 14px;
+  margin-left: 3%;
+  float: left;
+  border-radius: 10px;
+  background: rgba(0,0,0,.3); 
+}
+
+#playhead{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0,1);
+}

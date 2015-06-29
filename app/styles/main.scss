@@ -1,31 +1,135 @@
 // bower:scss
+@import "susy/sass/_susy.scss";
 // endbower
 
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
+// VARIABLES
+$gray: #c5cdcf;
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+// SASS MIXINS
+@mixin cf {
+  &:after {
+    content:"";
+    display: block;
+    clear: both;
   }
 }
 
+// SASS PARTIALS
+@import "primary-nav";
+@import "featured-section";
+@import "pinboard";
+@import "audio";
+
+// PROPERTIES ARE IN ALPHABETICAL ORDER
+body {
+  background: #fff;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  width: 100%;
+  min-width: 1000px;
+}
+
+section {
+  padding: 0 35px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+h2, p, li {
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+// PINBOARD NAV
+
+.date-wrapper {
+  background-color: rgba(0,0,0,.85);
+  bottom: 0;
+  color: $gray;
+  position: fixed;
+  padding: 9px 0px 21px 0px;
+  text-align: center;
+  width: 100%;
+  min-width: 1000px;
+  z-index: 1;
+}
+
+.date-wrapper > * {
+  display: inline-block;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.arrow {
+  position: relative;
+  top: 14px;
+  width: 40px;
+}
+
+.arrow:last-of-type {
+  -webkit-transform: rotate(180deg); /* Ch <36, Saf 5.1+, iOS, An =<4.4.4 */
+      -ms-transform: rotate(180deg); /* IE 9 */
+          transform: rotate(180deg); /* IE 10, Fx 16+, Op 12.1+ */
+}
+
+.arrow, .number, .date-dot, .date {
+  cursor: pointer;
+}
+
+.number {
+  background: transparent;
+  border: 2px solid;
+  font-size: 13px;
+  height: 19px;
+  text-align: center;
+  width: 19px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+
+.connecting-line {
+  width: 7.6%;
+  margin-bottom: 4px;
+  border: 1px solid $gray;
+}
+
+.date {
+  background: transparent;
+  border: 2px solid;
+  height: 23px;
+  padding: 10px;
+
+  -webkit-border-radius: 36%;
+     -moz-border-radius: 36%;
+          border-radius: 36%;
+}
+
+// END PINBOARD NAV
+
 .browsehappy {
-  margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+  margin: 0.2em 0;
 }

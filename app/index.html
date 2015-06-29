@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>chronos genome</title>
+    <title>Chronos Genome</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -17,24 +17,229 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <section id="main-nav-wrapper">
+      <div class="masthead">
+        <img src="images/chronos-logo.svg" alt="Chronos Logo">
+        <h1>Chronos</h1>
+      </div>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-      <li>HTML5 Boilerplate</li>
-      <li>Sass</li>
-      <li>Modernizr</li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a href="#">Pinboard</a></li>
+          <li><a href="#">Calendar</a></li>
+          <li><a href="#">Friends</a></li>
+          <li><a href="#">Messages</a></li>
+        </ul>
+      </nav>
+
+      <div class="profile-and-add">
+        <img src="http://placehold.it/25x25" alt="user profile image">
+        <img src="http://placehold.it/25x25" alt="plus sign icon">
+      </div>
+
+    </section>
+
+    <section id="featured-wrapper">
+
+      <div class="title-and-meta">
+        <div class="like-wrapper">
+          <img src="images/heart-icon-fill.svg" alt="like heart icon">
+          <p id="like-count">like count here</p>
+        </div>
+
+        <h1 id="featured-title">Featured title here</h1>
+        <p id="date-range">date range here</p>
+      </div>
+
+      <div class="attendance-meta">
+        <div class="attendees">
+          <img src="http://placehold.it/25x25" alt="attendee 1" class="user1">
+          <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
+          <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
+        </div>
+        
+        <!-- <span class="attend-separator">&#124;</span> -->
+
+        <div class="attendance">
+          <p id="attending">Yes</p>
+          <span>&#47;</span>
+          <p id="notAttending">No</p>
+        </div>
+      </div>
+
+      <div class="featured-categories">
+        <h2>Featured</h2>
+        <ul>
+          <li><a href="#">Blog Post</a></li>
+          <li><a href="#">Event</a></li>
+          <li><a href="#">Photo</a></li>
+          <li><a href="#">Music</a></li>
+          <li><a href="#">Video</a></li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="pinboard-header">
+        <h1>Your Pinboard</h1>
+
+        <div class="sort-by-wrapper">
+          <p>Sort By</p>
+          <div class="sort-by-options">
+            <div class="sort-by-icon green-pin"></div>
+            <div class="sort-by-icon blue-pin"></div>
+            <div class="sort-by-icon orange-pin"></div>
+            <div class="sort-by-icon red-pin"></div>
+          </div>
+        </div>
+    </section>
+
+    <section id="pinboard">
+
+        <article class="pin photo">
+          <div class="pin-wrapper">
+            <div class="like-wrapper">
+              <img src="images/heart-icon-fill.svg" alt="like heart icon">
+              <p id="like-count">like count here</p>
+            </div>
+
+
+            <div class="sort-by-icon orange-pin">
+            </div>
+          </div>
+        </article>
+
+        <article class="pin text">
+          <div class="pin-wrapper">            
+            <div class="like-wrapper">
+              <img src="images/heart-icon-fill.svg" alt="like heart icon">
+              <p id="like-count">like count here</p>
+            </div>
+
+            <div class="sort-by-icon blue-pin">
+            </div>
+
+            <h2>This pinboard is filled with cool events, photos and media. I love it.</h2>
+          </div>
+        </article>
+
+        <article class="pin event">
+          <div class="pin-wrapper">
+            <div class="like-wrapper">
+              <img src="images/heart-icon-fill.svg" alt="like heart icon">
+              <p id="like-count">like count here</p>
+            </div>
+
+            <h2>Company retreat in Deer Valley, Utah</h2>
+            <p>time</p>
+
+            <div class="attendance-meta">
+              <div class="attendees">
+                <img src="http://placehold.it/25x25" alt="attendee 1" class="user1">
+                <img src="http://placehold.it/25x25" alt="attendee 2" class="user2">
+                <img src="http://placehold.it/25x25" alt="attendee 3" class="user3">
+              </div>
+
+              <div class="attendance">
+                <p id="attending">Yes</p>
+                <span>&#47;</span>
+                <p id="notAttending">No</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pin song">
+          <div class="pin-wrapper">           
+            <div class="like-wrapper">
+              <img src="images/heart-icon-fill.svg" alt="like heart icon">
+              <p id="like-count">like count here</p>
+            </div>
+
+            <h2>Daft Punk &#8208; Get lucky</h2>
+
+            <audio id="music" preload="true">
+              <source src="audio/pi.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+            <div id="audioplayer">
+              <button id="pButton" class="play" onclick="play()"></button>
+              <div id="timeline">    
+                <div id="playhead"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pin song">
+          <div class="pin-wrapper">           
+            <div class="like-wrapper">
+              <img src="images/heart-icon-fill.svg" alt="like heart icon">
+              <p id="like-count">like count here</p>
+            </div>
+
+            <h2>Daft Punk &#8208; Get lucky</h2>
+
+            <audio id="music" preload="true">
+              <source src="audio/pi.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+            <div id="audioplayer">
+              <button id="pButton" class="play" onclick="play()"></button>
+              <div id="timeline">    
+                <div id="playhead"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+    </section>
+
+
+    <div class="date-wrapper">
+
+        <img class="arrow" src="images/arrow.svg" alt="left arrow previous icon">
+
+        <hr class="connecting-line">
+        
+        <p class="number" id="pos1">1</p>
+        
+        <hr class="connecting-line">
+        
+        <div class="date-dot" id="pos2"><p>&#9675;</p></div>
+        
+        <hr class="connecting-line">
+        
+        <p class="number" id="pos3">3</p>
+        
+        <hr class="connecting-line">
+        
+        <p class="date" id="centerPos">4 January</p>
+
+        <hr class="connecting-line">
+        
+        <p class="number" id="pos5">5</p>
+
+        <hr class="connecting-line">
+        
+        <div class="date-dot" id="pos6"><p>&#9675;</p></div>
+
+        <hr class="connecting-line">
+        
+        <p class="number" id="pos7">7</p>
+        
+        <hr class="connecting-line">
+        
+        <img class="arrow" src="images/arrow.svg" alt="right arrow next icon">
+
     </div>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -52,8 +257,9 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    <script src="scripts/audio.js"></script>
+  </body>
 </html>
